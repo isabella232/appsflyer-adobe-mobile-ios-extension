@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AppsFlyerAdobeExtension_Example' do
+  pod 'AppsFlyerAdobeExtension', :path => '../'
+
+  target 'AppsFlyerAdobeExtension_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
