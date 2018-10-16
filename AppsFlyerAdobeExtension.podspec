@@ -18,24 +18,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+AppsFlyer iOS SDK Extension for Adobe Mobile SDK.
                        DESC
 
   s.homepage         = 'https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'benjamin' => 'benjamin@appsflyer.com' }
   s.source           = { :git => 'https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
-
+  s.ios.deployment_target = '11.0'
   s.source_files = 'AppsFlyerAdobeExtension/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'AppsFlyerAdobeExtension' => ['AppsFlyerAdobeExtension/Assets/*.png']
-  # }
+  s.static_framework = true
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'AppsFlyerAdobeExtension/Classes/**/*.h'
   s.dependency 'AppsFlyerFramework'
   s.dependency 'ACPCore'
 end

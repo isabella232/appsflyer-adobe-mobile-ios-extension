@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03D08E0BE4E355596429D15CBB2A96C0 /* AppsFlyerEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BFA24390DA551A506A6A15BF7F10F7AB /* AppsFlyerEventListener.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1046DA8143B3EE7C29A4C15D2DAE7BF2 /* AppsFlyerAdobeExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 080A8BDEE6759C399AF573C66A739E74 /* AppsFlyerAdobeExtension-dummy.m */; };
+		2A7D1D02C64A6EF960642E51244C80CF /* Pods-AppsFlyerAdobeExtension_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA7F9866D17D88B2F0FB90F1549DC6C /* Pods-AppsFlyerAdobeExtension_Tests-dummy.m */; };
+		3478088AB3167A8DAF48DA49167D5415 /* AppsFlyerAdobeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D39B6143B682B5B6523C36697DFC7E56 /* AppsFlyerAdobeExtension.m */; };
+		3DB94E610F14B27D6BC91C62B3799893 /* AppsFlyerSharedStateListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C58693A4C930E09793245BB39556EC /* AppsFlyerSharedStateListener.m */; };
+		4F8FB514F78BB9D8503C91F9EBBBA3F1 /* AppsFlyerAdobeExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 59EDF99BB72BDA080E74D818DA2195E6 /* AppsFlyerAdobeExtension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CE76C1B2220AF547E716E6364035886F /* AppsFlyerEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D24385A8C7F668918E23F76D13305A /* AppsFlyerEventListener.m */; };
+		F1A95B77B0173F6D5AA030F6A8C83776 /* Pods-AppsFlyerAdobeExtension_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BD187988D19827A283C8E7CFDC790 /* Pods-AppsFlyerAdobeExtension_Example-dummy.m */; };
+		FBC4475E26853F0429E2D38DEBCF7A4F /* AppsFlyerSharedStateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E305631182275EE6C3516FFB5D8CB0C /* AppsFlyerSharedStateListener.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10BDF91652157BBBE02E098FCD5B4E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3A54AEF5840FEB04521D2263F75E810;
+			remoteInfo = "Pods-AppsFlyerAdobeExtension_Example";
+		};
+		AD87F0D0BAB8551CB397BCFEDA4349CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F647C27C8E4EF0498218FFF22716FC2;
+			remoteInfo = AppsFlyerAdobeExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0150C9F291ADF31EFD9E2F3E4F93696A /* Pods-AppsFlyerAdobeExtension_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppsFlyerAdobeExtension_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		061D72276CD8CF3CA4A429C2C84F69BB /* libPods-AppsFlyerAdobeExtension_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-AppsFlyerAdobeExtension_Tests.a"; path = "libPods-AppsFlyerAdobeExtension_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		080A8BDEE6759C399AF573C66A739E74 /* AppsFlyerAdobeExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppsFlyerAdobeExtension-dummy.m"; sourceTree = "<group>"; };
+		1C1FB4919361601A7002B348AE8A34B3 /* Pods-AppsFlyerAdobeExtension_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppsFlyerAdobeExtension_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1C6196796DF347A9F8B398EB72616014 /* Pods-AppsFlyerAdobeExtension_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppsFlyerAdobeExtension_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		20D24385A8C7F668918E23F76D13305A /* AppsFlyerEventListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppsFlyerEventListener.m; path = AppsFlyerAdobeExtension/Classes/AppsFlyerEventListener.m; sourceTree = "<group>"; };
+		20D6C8D14769A2157C8EB8A3B72E8308 /* Pods-AppsFlyerAdobeExtension_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppsFlyerAdobeExtension_Example-frameworks.sh"; sourceTree = "<group>"; };
+		223AE9708B260C614064192FE7D2CA10 /* AppsFlyerAdobeExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AppsFlyerAdobeExtension.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		25FF96662B85A9B7D07594E4CD958088 /* libPods-AppsFlyerAdobeExtension_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-AppsFlyerAdobeExtension_Example.a"; path = "libPods-AppsFlyerAdobeExtension_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A94BA30F9CEA960BE581FF5D38DCAC5 /* Pods-AppsFlyerAdobeExtension_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppsFlyerAdobeExtension_Tests-resources.sh"; sourceTree = "<group>"; };
+		2E305631182275EE6C3516FFB5D8CB0C /* AppsFlyerSharedStateListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppsFlyerSharedStateListener.h; path = AppsFlyerAdobeExtension/Classes/AppsFlyerSharedStateListener.h; sourceTree = "<group>"; };
+		36C58693A4C930E09793245BB39556EC /* AppsFlyerSharedStateListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppsFlyerSharedStateListener.m; path = AppsFlyerAdobeExtension/Classes/AppsFlyerSharedStateListener.m; sourceTree = "<group>"; };
+		48C1E9F92AB3034744EDEF5B60C08127 /* Pods-AppsFlyerAdobeExtension_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppsFlyerAdobeExtension_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		571B865135AB3B8ADF3184A9215D2A45 /* ACPLifecycle_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ACPLifecycle_iOS.framework; sourceTree = "<group>"; };
+		59EDF99BB72BDA080E74D818DA2195E6 /* AppsFlyerAdobeExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppsFlyerAdobeExtension.h; path = AppsFlyerAdobeExtension/Classes/AppsFlyerAdobeExtension.h; sourceTree = "<group>"; };
+		5DA7B4CF99C1D96A91E7714737F4C08A /* Pods-AppsFlyerAdobeExtension_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppsFlyerAdobeExtension_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		67DD3C36C65E70D8683518987056C37F /* AppsFlyerAdobeExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AppsFlyerAdobeExtension-prefix.pch"; sourceTree = "<group>"; };
+		7F4BD187988D19827A283C8E7CFDC790 /* Pods-AppsFlyerAdobeExtension_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppsFlyerAdobeExtension_Example-dummy.m"; sourceTree = "<group>"; };
+		92E0F12C86B96E84EFE8710AD342796B /* AppsFlyerAdobeExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppsFlyerAdobeExtension.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C81EFD8B3CA5BE4942219214E54D46 /* AdobeMarketingMobileCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeMarketingMobileCore.framework; sourceTree = "<group>"; };
+		9557D49466F3D5C4B197D7E3BC75DE63 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
+		9C4705E6B1E732EF0B25F5D104D66390 /* Pods-AppsFlyerAdobeExtension_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppsFlyerAdobeExtension_Example-resources.sh"; sourceTree = "<group>"; };
+		A47F1850962E458E3F093035F441F355 /* ACPCore_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ACPCore_iOS.framework; sourceTree = "<group>"; };
+		A5899D5613DF8B9931004E2E9ECE5C1B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		AFA7F9866D17D88B2F0FB90F1549DC6C /* Pods-AppsFlyerAdobeExtension_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppsFlyerAdobeExtension_Tests-dummy.m"; sourceTree = "<group>"; };
+		B00A3DB594EC53285A84A77D1A45DF41 /* ACPIdentity_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ACPIdentity_iOS.framework; sourceTree = "<group>"; };
+		BFA24390DA551A506A6A15BF7F10F7AB /* AppsFlyerEventListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppsFlyerEventListener.h; path = AppsFlyerAdobeExtension/Classes/AppsFlyerEventListener.h; sourceTree = "<group>"; };
+		C247EE6E513A63977E002A8186240BA2 /* Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C3CEB09FE17C467B5B101EC6B2409AFA /* Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CCCBF768C8965D52A2595E8830BCC00F /* ACPSignal_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ACPSignal_iOS.framework; sourceTree = "<group>"; };
+		D39B6143B682B5B6523C36697DFC7E56 /* AppsFlyerAdobeExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppsFlyerAdobeExtension.m; path = AppsFlyerAdobeExtension/Classes/AppsFlyerAdobeExtension.m; sourceTree = "<group>"; };
+		D87FBAC0638BC21943FF45CD8FC2CC7E /* Pods-AppsFlyerAdobeExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppsFlyerAdobeExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E2DAC44BC08B0F367E0ED2A64C5BA162 /* Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EC0EF051E702C7AA503CA4B630BF91BB /* libAppsFlyerAdobeExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAppsFlyerAdobeExtension.a; path = libAppsFlyerAdobeExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD4087EDCC0596F403258DEEF6959358 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		280628DB86E10C1790924D494DF23A5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E367E284E750E843CB770E913A7B85B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A426A0098CE66BCB1F86AF9FCDDBF5A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AA715BC0BA3E0ADDD8222EEA9746A25 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				92E0F12C86B96E84EFE8710AD342796B /* AppsFlyerAdobeExtension.xcconfig */,
+				080A8BDEE6759C399AF573C66A739E74 /* AppsFlyerAdobeExtension-dummy.m */,
+				67DD3C36C65E70D8683518987056C37F /* AppsFlyerAdobeExtension-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AppsFlyerAdobeExtension";
+			sourceTree = "<group>";
+		};
+		38AA2B9DE574AF81785EC899479CFDBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A47F1850962E458E3F093035F441F355 /* ACPCore_iOS.framework */,
+				B00A3DB594EC53285A84A77D1A45DF41 /* ACPIdentity_iOS.framework */,
+				571B865135AB3B8ADF3184A9215D2A45 /* ACPLifecycle_iOS.framework */,
+				CCCBF768C8965D52A2595E8830BCC00F /* ACPSignal_iOS.framework */,
+				94C81EFD8B3CA5BE4942219214E54D46 /* AdobeMarketingMobileCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D9C77893C3CE1E6306123D5BE7E2603 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE43CB2D42E39D38C4716311C3E4B5AA /* ACPCore */,
+				8EC962D310A5E1BCB4B3C2A12670AC8F /* AppsFlyerFramework */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		546D6003B3A3A68603131D6AA1C2D720 /* AppsFlyerAdobeExtension */ = {
+			isa = PBXGroup;
+			children = (
+				59EDF99BB72BDA080E74D818DA2195E6 /* AppsFlyerAdobeExtension.h */,
+				D39B6143B682B5B6523C36697DFC7E56 /* AppsFlyerAdobeExtension.m */,
+				BFA24390DA551A506A6A15BF7F10F7AB /* AppsFlyerEventListener.h */,
+				20D24385A8C7F668918E23F76D13305A /* AppsFlyerEventListener.m */,
+				2E305631182275EE6C3516FFB5D8CB0C /* AppsFlyerSharedStateListener.h */,
+				36C58693A4C930E09793245BB39556EC /* AppsFlyerSharedStateListener.m */,
+				C8295D301E269CE9C92593A4E3E5B537 /* Pod */,
+				1AA715BC0BA3E0ADDD8222EEA9746A25 /* Support Files */,
+			);
+			name = AppsFlyerAdobeExtension;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		6CA1129FB50DDDF36ABAE66179A0C22E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9557D49466F3D5C4B197D7E3BC75DE63 /* AppsFlyerLib.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		723B79D2E70DF14DFC0DE7D669CCB7B5 /* Pods-AppsFlyerAdobeExtension_Example */ = {
+			isa = PBXGroup;
+			children = (
+				0150C9F291ADF31EFD9E2F3E4F93696A /* Pods-AppsFlyerAdobeExtension_Example-acknowledgements.markdown */,
+				1C1FB4919361601A7002B348AE8A34B3 /* Pods-AppsFlyerAdobeExtension_Example-acknowledgements.plist */,
+				7F4BD187988D19827A283C8E7CFDC790 /* Pods-AppsFlyerAdobeExtension_Example-dummy.m */,
+				20D6C8D14769A2157C8EB8A3B72E8308 /* Pods-AppsFlyerAdobeExtension_Example-frameworks.sh */,
+				9C4705E6B1E732EF0B25F5D104D66390 /* Pods-AppsFlyerAdobeExtension_Example-resources.sh */,
+				C247EE6E513A63977E002A8186240BA2 /* Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig */,
+				D87FBAC0638BC21943FF45CD8FC2CC7E /* Pods-AppsFlyerAdobeExtension_Example.release.xcconfig */,
+			);
+			name = "Pods-AppsFlyerAdobeExtension_Example";
+			path = "Target Support Files/Pods-AppsFlyerAdobeExtension_Example";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				85CB857A6AB127FC90CECC992A44EC71 /* Development Pods */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				4D9C77893C3CE1E6306123D5BE7E2603 /* Pods */,
+				BCD560BAF351D437B451EB6458C30606 /* Products */,
+				AA5DBD8143AC6D40A25E6DAF299CC490 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		85CB857A6AB127FC90CECC992A44EC71 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				546D6003B3A3A68603131D6AA1C2D720 /* AppsFlyerAdobeExtension */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		8EC962D310A5E1BCB4B3C2A12670AC8F /* AppsFlyerFramework */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1129FB50DDDF36ABAE66179A0C22E /* Frameworks */,
+			);
+			name = AppsFlyerFramework;
+			path = AppsFlyerFramework;
+			sourceTree = "<group>";
+		};
+		AA5DBD8143AC6D40A25E6DAF299CC490 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				723B79D2E70DF14DFC0DE7D669CCB7B5 /* Pods-AppsFlyerAdobeExtension_Example */,
+				E4BF332A7A702423D892CA4D73BEC1D1 /* Pods-AppsFlyerAdobeExtension_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BCD560BAF351D437B451EB6458C30606 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC0EF051E702C7AA503CA4B630BF91BB /* libAppsFlyerAdobeExtension.a */,
+				25FF96662B85A9B7D07594E4CD958088 /* libPods-AppsFlyerAdobeExtension_Example.a */,
+				061D72276CD8CF3CA4A429C2C84F69BB /* libPods-AppsFlyerAdobeExtension_Tests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8295D301E269CE9C92593A4E3E5B537 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				223AE9708B260C614064192FE7D2CA10 /* AppsFlyerAdobeExtension.podspec */,
+				A5899D5613DF8B9931004E2E9ECE5C1B /* LICENSE */,
+				FD4087EDCC0596F403258DEEF6959358 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		E4BF332A7A702423D892CA4D73BEC1D1 /* Pods-AppsFlyerAdobeExtension_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1C6196796DF347A9F8B398EB72616014 /* Pods-AppsFlyerAdobeExtension_Tests-acknowledgements.markdown */,
+				48C1E9F92AB3034744EDEF5B60C08127 /* Pods-AppsFlyerAdobeExtension_Tests-acknowledgements.plist */,
+				AFA7F9866D17D88B2F0FB90F1549DC6C /* Pods-AppsFlyerAdobeExtension_Tests-dummy.m */,
+				5DA7B4CF99C1D96A91E7714737F4C08A /* Pods-AppsFlyerAdobeExtension_Tests-frameworks.sh */,
+				2A94BA30F9CEA960BE581FF5D38DCAC5 /* Pods-AppsFlyerAdobeExtension_Tests-resources.sh */,
+				C3CEB09FE17C467B5B101EC6B2409AFA /* Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig */,
+				E2DAC44BC08B0F367E0ED2A64C5BA162 /* Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig */,
+			);
+			name = "Pods-AppsFlyerAdobeExtension_Tests";
+			path = "Target Support Files/Pods-AppsFlyerAdobeExtension_Tests";
+			sourceTree = "<group>";
+		};
+		EE43CB2D42E39D38C4716311C3E4B5AA /* ACPCore */ = {
+			isa = PBXGroup;
+			children = (
+				EEF97B2252658A2D721FF6E021B28BA8 /* iOS */,
+			);
+			name = ACPCore;
+			path = ACPCore;
+			sourceTree = "<group>";
+		};
+		EEF97B2252658A2D721FF6E021B28BA8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				38AA2B9DE574AF81785EC899479CFDBA /* Frameworks */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		730E57B55190536CBAF3C000622D1FE8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8FB514F78BB9D8503C91F9EBBBA3F1 /* AppsFlyerAdobeExtension.h in Headers */,
+				03D08E0BE4E355596429D15CBB2A96C0 /* AppsFlyerEventListener.h in Headers */,
+				FBC4475E26853F0429E2D38DEBCF7A4F /* AppsFlyerSharedStateListener.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1F647C27C8E4EF0498218FFF22716FC2 /* AppsFlyerAdobeExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA547E9D296C7DC7F38A108AA3C60711 /* Build configuration list for PBXNativeTarget "AppsFlyerAdobeExtension" */;
+			buildPhases = (
+				A581CB9FCD1578E8935373D2A4F954D6 /* Sources */,
+				A426A0098CE66BCB1F86AF9FCDDBF5A8 /* Frameworks */,
+				730E57B55190536CBAF3C000622D1FE8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppsFlyerAdobeExtension;
+			productName = AppsFlyerAdobeExtension;
+			productReference = EC0EF051E702C7AA503CA4B630BF91BB /* libAppsFlyerAdobeExtension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A3A54AEF5840FEB04521D2263F75E810 /* Pods-AppsFlyerAdobeExtension_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1376A6F5F30F4979E965544DC1387F14 /* Build configuration list for PBXNativeTarget "Pods-AppsFlyerAdobeExtension_Example" */;
+			buildPhases = (
+				52A0CEA7C1F2F07DD112941792326967 /* Sources */,
+				6E367E284E750E843CB770E913A7B85B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EC8891A92AA9AC2D15563264BD4926E /* PBXTargetDependency */,
+			);
+			name = "Pods-AppsFlyerAdobeExtension_Example";
+			productName = "Pods-AppsFlyerAdobeExtension_Example";
+			productReference = 25FF96662B85A9B7D07594E4CD958088 /* libPods-AppsFlyerAdobeExtension_Example.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F2680C9E10551183CBA4DB113960D877 /* Pods-AppsFlyerAdobeExtension_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F94A648CE002C4374267F9C86F5438BE /* Build configuration list for PBXNativeTarget "Pods-AppsFlyerAdobeExtension_Tests" */;
+			buildPhases = (
+				07AC87C5FE90F4ABF43B9E3095CB07B9 /* Sources */,
+				280628DB86E10C1790924D494DF23A5B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28B7C8782382F9232BF72614093E5F13 /* PBXTargetDependency */,
+			);
+			name = "Pods-AppsFlyerAdobeExtension_Tests";
+			productName = "Pods-AppsFlyerAdobeExtension_Tests";
+			productReference = 061D72276CD8CF3CA4A429C2C84F69BB /* libPods-AppsFlyerAdobeExtension_Tests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BCD560BAF351D437B451EB6458C30606 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F647C27C8E4EF0498218FFF22716FC2 /* AppsFlyerAdobeExtension */,
+				A3A54AEF5840FEB04521D2263F75E810 /* Pods-AppsFlyerAdobeExtension_Example */,
+				F2680C9E10551183CBA4DB113960D877 /* Pods-AppsFlyerAdobeExtension_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07AC87C5FE90F4ABF43B9E3095CB07B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7D1D02C64A6EF960642E51244C80CF /* Pods-AppsFlyerAdobeExtension_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A0CEA7C1F2F07DD112941792326967 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1A95B77B0173F6D5AA030F6A8C83776 /* Pods-AppsFlyerAdobeExtension_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A581CB9FCD1578E8935373D2A4F954D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1046DA8143B3EE7C29A4C15D2DAE7BF2 /* AppsFlyerAdobeExtension-dummy.m in Sources */,
+				3478088AB3167A8DAF48DA49167D5415 /* AppsFlyerAdobeExtension.m in Sources */,
+				CE76C1B2220AF547E716E6364035886F /* AppsFlyerEventListener.m in Sources */,
+				3DB94E610F14B27D6BC91C62B3799893 /* AppsFlyerSharedStateListener.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28B7C8782382F9232BF72614093E5F13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-AppsFlyerAdobeExtension_Example";
+			target = A3A54AEF5840FEB04521D2263F75E810 /* Pods-AppsFlyerAdobeExtension_Example */;
+			targetProxy = 10BDF91652157BBBE02E098FCD5B4E6B /* PBXContainerItemProxy */;
+		};
+		2EC8891A92AA9AC2D15563264BD4926E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppsFlyerAdobeExtension;
+			target = 1F647C27C8E4EF0498218FFF22716FC2 /* AppsFlyerAdobeExtension */;
+			targetProxy = AD87F0D0BAB8551CB397BCFEDA4349CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		28F2B6A61449126C590ED5A28DB59365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87FBAC0638BC21943FF45CD8FC2CC7E /* Pods-AppsFlyerAdobeExtension_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E1DAEBB8046B5AD7CF0CFAF5A7A7F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E0F12C86B96E84EFE8710AD342796B /* AppsFlyerAdobeExtension.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AppsFlyerAdobeExtension/AppsFlyerAdobeExtension-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AppsFlyerAdobeExtension;
+				PRODUCT_NAME = AppsFlyerAdobeExtension;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C00B1191DB356A94C1A3F4BCFCDC1BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C247EE6E513A63977E002A8186240BA2 /* Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A07BA549D780E07CFB10FA410CFA6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3CEB09FE17C467B5B101EC6B2409AFA /* Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6408F12624051F668D8D93CB572D45B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E0F12C86B96E84EFE8710AD342796B /* AppsFlyerAdobeExtension.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AppsFlyerAdobeExtension/AppsFlyerAdobeExtension-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AppsFlyerAdobeExtension;
+				PRODUCT_NAME = AppsFlyerAdobeExtension;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BE3F77EEB25AC7083D52AC0D33A53FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2DAC44BC08B0F367E0ED2A64C5BA162 /* Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1376A6F5F30F4979E965544DC1387F14 /* Build configuration list for PBXNativeTarget "Pods-AppsFlyerAdobeExtension_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C00B1191DB356A94C1A3F4BCFCDC1BB /* Debug */,
+				28F2B6A61449126C590ED5A28DB59365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA547E9D296C7DC7F38A108AA3C60711 /* Build configuration list for PBXNativeTarget "AppsFlyerAdobeExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6408F12624051F668D8D93CB572D45B2 /* Debug */,
+				2E1DAEBB8046B5AD7CF0CFAF5A7A7F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F94A648CE002C4374267F9C86F5438BE /* Build configuration list for PBXNativeTarget "Pods-AppsFlyerAdobeExtension_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A07BA549D780E07CFB10FA410CFA6EC /* Debug */,
+				9BE3F77EEB25AC7083D52AC0D33A53FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

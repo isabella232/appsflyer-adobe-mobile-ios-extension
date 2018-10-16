@@ -1,0 +1,1 @@
+../../../../ACPCore/AdobeMarketingMobileCore.framework/Headers/HitQueueBase.h

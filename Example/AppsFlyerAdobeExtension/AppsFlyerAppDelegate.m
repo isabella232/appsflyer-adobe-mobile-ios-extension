@@ -9,7 +9,7 @@
 #import "AppsFlyerAppDelegate.h"
 #import "AppsFlyerAppDelegate.h"
 #import <ACPCore_iOS/ACPCore_iOS.h>
-#import <AppsFlyerAdobeExtension.h>
+#import "AppsFlyerAdobeExtension.h"
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
 #import <ACPSignal_iOS/ACPSignal_iOS.h>
