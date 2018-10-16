@@ -19,11 +19,3 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'AppsFlyerAdobeExtension'
 ```
-
-## Author
-
-benjamin, benjamin@appsflyer.com
-
-## License
-
-AppsFlyerAdobeExtension is available under the MIT license. See the LICENSE file for more info.
