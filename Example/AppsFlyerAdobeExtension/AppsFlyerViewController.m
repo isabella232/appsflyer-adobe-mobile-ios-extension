@@ -7,6 +7,7 @@
 //
 
 #import "AppsFlyerViewController.h"
+#import <ACPCore_iOS/ACPCore_iOS.h>
 
 @interface AppsFlyerViewController ()
 
@@ -25,5 +26,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)trackEvt:(id)sender {
+         [ACPCore trackAction:@"testAnalyticsAction" data:@{@"revenue":@"200",@"currency":@"ILS"}];
+}
+
 
 @end

@@ -9,5 +9,5 @@
 @import UIKit;
 
 @interface AppsFlyerViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIButton *trackEvt;
 @end

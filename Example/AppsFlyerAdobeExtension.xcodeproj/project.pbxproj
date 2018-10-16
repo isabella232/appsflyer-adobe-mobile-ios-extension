@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35DDA57F0A76204ED3F49A59 /* libPods-AppsFlyerAdobeExtension_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A263CC12BE4D30F4611991E1 /* libPods-AppsFlyerAdobeExtension_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,9 +22,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		870BCB6344CF0614627E4A95 /* Pods_AppsFlyerAdobeExtension_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DE706849F0A3CD272946D6 /* Pods_AppsFlyerAdobeExtension_Tests.framework */; };
+		7F14F47B1BC0EF9B2B86AEC0 /* libPods-AppsFlyerAdobeExtension_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E9BB597BB51588D19D6B58 /* libPods-AppsFlyerAdobeExtension_Tests.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		E972D312941BE374DBDAA101 /* Pods_AppsFlyerAdobeExtension_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7199A259DC78F5C9F7DA86 /* Pods_AppsFlyerAdobeExtension_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09CB2F60D334FFD9110D2E1D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		09CB2F60D334FFD9110D2E1D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		50E9BB597BB51588D19D6B58 /* libPods-AppsFlyerAdobeExtension_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppsFlyerAdobeExtension_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC107AB515ED61C39486BA6 /* Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppsFlyerAdobeExtension_Tests/Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AppsFlyerAdobeExtension_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppsFlyerAdobeExtension_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,14 +60,13 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		86DE706849F0A3CD272946D6 /* Pods_AppsFlyerAdobeExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppsFlyerAdobeExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95FBBBBB3169C63B721905CC /* Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppsFlyerAdobeExtension_Example/Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9D7199A259DC78F5C9F7DA86 /* Pods_AppsFlyerAdobeExtension_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppsFlyerAdobeExtension_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A28150BCD3F17F5C1E9512BE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A263CC12BE4D30F4611991E1 /* libPods-AppsFlyerAdobeExtension_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppsFlyerAdobeExtension_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A28150BCD3F17F5C1E9512BE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B44FA754414D039D469BF249 /* Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppsFlyerAdobeExtension_Tests/Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EDD338D3E3E7DE33D2A69F0E /* Pods-AppsFlyerAdobeExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppsFlyerAdobeExtension_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppsFlyerAdobeExtension_Example/Pods-AppsFlyerAdobeExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
-		FEAE49557E372A9A700DA09F /* AppsFlyerAdobeExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AppsFlyerAdobeExtension.podspec; path = ../AppsFlyerAdobeExtension.podspec; sourceTree = "<group>"; };
+		FEAE49557E372A9A700DA09F /* AppsFlyerAdobeExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AppsFlyerAdobeExtension.podspec; path = ../AppsFlyerAdobeExtension.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				E972D312941BE374DBDAA101 /* Pods_AppsFlyerAdobeExtension_Example.framework in Frameworks */,
+				35DDA57F0A76204ED3F49A59 /* libPods-AppsFlyerAdobeExtension_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				870BCB6344CF0614627E4A95 /* Pods_AppsFlyerAdobeExtension_Tests.framework in Frameworks */,
+				7F14F47B1BC0EF9B2B86AEC0 /* libPods-AppsFlyerAdobeExtension_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +134,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				9D7199A259DC78F5C9F7DA86 /* Pods_AppsFlyerAdobeExtension_Example.framework */,
-				86DE706849F0A3CD272946D6 /* Pods_AppsFlyerAdobeExtension_Tests.framework */,
+				A263CC12BE4D30F4611991E1 /* libPods-AppsFlyerAdobeExtension_Example.a */,
+				50E9BB597BB51588D19D6B58 /* libPods-AppsFlyerAdobeExtension_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,7 +247,11 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = benjamin;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 6UQAD4B3U2;
+					};
 					6003F5AD195388D20070C39A = {
+						DevelopmentTeam = 6UQAD4B3U2;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -301,11 +305,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AppsFlyerAdobeExtension_Example/Pods-AppsFlyerAdobeExtension_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppsFlyerAdobeExtension/AppsFlyerAdobeExtension.framework",
+				"${PODS_ROOT}/ACPCore/ACPCore_iOS.framework",
+				"${PODS_ROOT}/ACPCore/AdobeMarketingMobileCore.framework",
+				"${PODS_ROOT}/ACPCore/ACPIdentity_iOS.framework",
+				"${PODS_ROOT}/ACPCore/ACPLifecycle_iOS.framework",
+				"${PODS_ROOT}/ACPCore/ACPSignal_iOS.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppsFlyerAdobeExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACPCore_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeMarketingMobileCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACPIdentity_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACPLifecycle_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACPSignal_iOS.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -485,9 +497,11 @@
 			baseConfigurationReference = 95FBBBBB3169C63B721905CC /* Pods-AppsFlyerAdobeExtension_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6UQAD4B3U2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppsFlyerAdobeExtension/AppsFlyerAdobeExtension-Prefix.pch";
 				INFOPLIST_FILE = "AppsFlyerAdobeExtension/AppsFlyerAdobeExtension-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,9 +514,11 @@
 			baseConfigurationReference = EDD338D3E3E7DE33D2A69F0E /* Pods-AppsFlyerAdobeExtension_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6UQAD4B3U2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppsFlyerAdobeExtension/AppsFlyerAdobeExtension-Prefix.pch";
 				INFOPLIST_FILE = "AppsFlyerAdobeExtension/AppsFlyerAdobeExtension-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +531,7 @@
 			baseConfigurationReference = 5CC107AB515ED61C39486BA6 /* Pods-AppsFlyerAdobeExtension_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6UQAD4B3U2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -539,6 +556,7 @@
 			baseConfigurationReference = B44FA754414D039D469BF249 /* Pods-AppsFlyerAdobeExtension_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6UQAD4B3U2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

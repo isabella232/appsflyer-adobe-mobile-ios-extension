@@ -7,12 +7,39 @@
 //
 
 #import "AppsFlyerAppDelegate.h"
+#import "AppsFlyerAppDelegate.h"
+#import <ACPCore_iOS/ACPCore_iOS.h>
+#import <AppsFlyerAdobeExtension.h>
+#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
+#import <ACPSignal_iOS/ACPSignal_iOS.h>
+
 
 @implementation AppsFlyerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
+    [ACPCore configureWithAppId:@"replace-with-appId-from-adobe-launch-console"];
+    
+    [AppsFlyerAdobeExtension registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+    
+    [ACPCore start:^{
+        [ACPCore lifecycleStart:nil];
+    }];
+    [AppsFlyerAdobeExtension registerCallbacks:nil];
+    [AppsFlyerAdobeExtension registerCallbacks:^(NSDictionary *dictionary) {
+        NSLog(@"[AppsFlyerAdobeExtension] Received callback: %@", dictionary);
+    }];
+    
+    [AppsFlyerAdobeExtension callbacksErrorHandler:^(NSError *error) {
+        NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
+    }];
+
     return YES;
 }
 
