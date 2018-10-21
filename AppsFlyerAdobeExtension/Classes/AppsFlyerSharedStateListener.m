@@ -40,11 +40,12 @@
             if ([configSharedState objectForKey:@"appsFlyerAppId"] && [configSharedState objectForKey:@"appsFlyerDevKey"]) {
                 NSString* appsFlyerAppId = [configSharedState objectForKey:@"appsFlyerAppId"];
                 NSString* appsFlyerDevKey = [configSharedState objectForKey:@"appsFlyerDevKey"];
-                BOOL appsFlyerIsDebug = [configSharedState objectForKey:@"appsFlyerIsDebug"];
+                id appsFlyerIsDebug = [configSharedState objectForKey:@"appsFlyerIsDebug"];
+                BOOL isDebug = [appsFlyerIsDebug isKindOfClass:[NSNumber class]] && [appsFlyerIsDebug integerValue] == 1;
                 
                 [[AppsFlyerAdobeExtension shared] setupAppsFlyerTrackingWithAppId:appsFlyerAppId
                                                                   appsFlyerDevKey:appsFlyerDevKey
-                                                                          isDebug:appsFlyerIsDebug];
+                                                                          isDebug:isDebug];
                 
                 NSLog(@"com.appsflyer.adobeextension Received credentials for app: %@", [configSharedState objectForKey:@"appsFlyerAppId"]);
             } else {
