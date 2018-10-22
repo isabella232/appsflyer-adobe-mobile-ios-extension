@@ -11,6 +11,8 @@ For instructions on using AppsFlyer's Adobe Mobile SDK Extension please see: htt
 
 After adding the extension to the mobile property, please set the App ID and Dev Key fields and save the extension settings. 
 ![AppsFlyerAdobeSDK](https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension/blob/master/gitresources/img.png)
+
+
 For more information on adding applications to the AppsFlyer dashboard see [here](https://support.appsflyer.com/hc/en-us/articles/207377436-Adding-a-New-App-to-the-AppsFlyer-Dashboard)
 
 Information on adding the extension to xCode is available on the Launch dashboard.
