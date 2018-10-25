@@ -94,6 +94,15 @@ static void (^__errorHandler)(NSError*) = nil;
 - (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey isDebug:(BOOL)isDebug {
     if (appId != nil && appsFlyerDevKey != nil) {
         if (![self didReceiveConfigurations]) {
+            
+            [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {
+                if (retrievedCloudId) {
+                    [[AppsFlyerTracker sharedTracker] setCustomerUserID:retrievedCloudId];
+                } else {
+                    NSLog(@"com.appsflyer.adobeextension ExperienceCloudId is null");
+                }
+            }];
+            
             [AppsFlyerTracker sharedTracker].appleAppID = appId;
             [AppsFlyerTracker sharedTracker].appsFlyerDevKey = appsFlyerDevKey;
             [AppsFlyerTracker sharedTracker].delegate = self;

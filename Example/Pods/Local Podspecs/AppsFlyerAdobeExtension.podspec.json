@@ -1,25 +1,26 @@
 {
   "name": "AppsFlyerAdobeExtension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "AppsFlyer iOS SDK Extension for Adobe Mobile SDK",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/benjamin/AppsFlyerAdobeExtension",
+  "description": "AppsFlyer iOS SDK Extension for Adobe Mobile SDK.",
+  "homepage": "https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension",
   "license": {
-    "type": "MIT",
+    "type": "proprietary",
     "file": "LICENSE"
   },
   "authors": {
-    "benjamin": "benjamin@appsflyer.com"
+    "AppsFlyer": "benjamin@appsflyer.com"
   },
   "source": {
-    "git": "https://github.com/benjamin/AppsFlyerAdobeExtension.git",
-    "tag": "1.0.0"
+    "git": "https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension.git",
+    "tag": "1.0.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
   "source_files": "AppsFlyerAdobeExtension/Classes/**/*",
-  "public_header_files": "Pod/Classes/**/*.h",
+  "static_framework": true,
+  "public_header_files": "AppsFlyerAdobeExtension/Classes/**/*.h",
   "dependencies": {
     "AppsFlyerFramework": [
 
