@@ -128,6 +128,15 @@ static void (^__errorHandler)(NSError*) = nil;
     }
 }
 
++ (void)continueUserActivity:(NSUserActivity *)userActivity
+            restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
+    [[AppsFlyerTracker sharedTracker] continueUserActivity:userActivity restorationHandler:restorationHandler];
+}
+
++ (void)openURL:(NSURL *)url options:(NSDictionary *)options {
+    [[AppsFlyerTracker sharedTracker] handleOpenUrl:url options:options];
+}
+
 - (void)onConversionDataReceived:(NSDictionary*)installData {
     NSMutableDictionary* appendedInstallData = [NSMutableDictionary dictionaryWithDictionary:installData];
     [appendedInstallData setObject:@"onConversionDataReceived" forKey:@"callback_type"];

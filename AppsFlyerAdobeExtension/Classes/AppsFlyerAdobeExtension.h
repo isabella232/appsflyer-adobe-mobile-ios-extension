@@ -31,5 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)registerCallbacks:(void (^ _Nullable)(NSDictionary *dictionary))completionHandler;
 + (void)callbacksErrorHandler:(void (^ _Nullable)(NSError *error))errorHandler;
 
++ (void)continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler;
++ (void)openURL:(NSURL *)url options:(NSDictionary *)options;
+
 @end
 NS_ASSUME_NONNULL_END
