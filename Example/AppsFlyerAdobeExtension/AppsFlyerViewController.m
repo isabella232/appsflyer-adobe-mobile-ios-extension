@@ -25,10 +25,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+} 
 
 - (IBAction)trackEvt:(id)sender {
-         [ACPCore trackAction:@"testAnalyticsAction" data:@{@"revenue":@"200",@"currency":@"ILS"}];
+    [ACPCore trackAction:@"testAnalyticsAction" data:@{@"revenue":@"200",@"currency":@"ILS", @"freehand":@"param"}];
 }
 
 

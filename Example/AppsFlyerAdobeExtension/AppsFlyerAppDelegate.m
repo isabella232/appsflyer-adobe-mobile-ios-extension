@@ -13,6 +13,7 @@
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
 #import <ACPSignal_iOS/ACPSignal_iOS.h>
+#import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
 
 
 @implementation AppsFlyerAppDelegate
@@ -21,9 +22,10 @@
 {
     // Override point for customization after application launch.
     [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
-    [ACPCore configureWithAppId:@"replace-with-appId-from-adobe-launch-console"];
+    [ACPCore configureWithAppId:@"launch-EN5cddc91c5c764846be8819553716e2c9-development"];
     
     [AppsFlyerAdobeExtension registerExtension];
+    [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
     [ACPLifecycle registerExtension];
     [ACPSignal registerExtension];
@@ -31,7 +33,7 @@
     [ACPCore start:^{
         [ACPCore lifecycleStart:nil];
     }];
-    [AppsFlyerAdobeExtension registerCallbacks:nil];
+
     [AppsFlyerAdobeExtension registerCallbacks:^(NSDictionary *dictionary) {
         NSLog(@"[AppsFlyerAdobeExtension] Received callback: %@", dictionary);
     }];
@@ -40,6 +42,18 @@
         NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
     }];
 
+    return YES;
+}
+
+// Deep Link reporting using Univeral Links.
+ - (BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
+     [AppsFlyerAdobeExtension continueUserActivity:userActivity restorationHandler:restorationHandler];
+    return YES;
+}
+
+// Deep Link reporting for URL Schemes.
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary *) options {
+    [AppsFlyerAdobeExtension openURL:url options:options];
     return YES;
 }
 
