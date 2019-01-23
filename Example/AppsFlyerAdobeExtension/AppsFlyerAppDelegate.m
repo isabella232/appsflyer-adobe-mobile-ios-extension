@@ -22,7 +22,7 @@
 {
     // Override point for customization after application launch.
     [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
-    [ACPCore configureWithAppId:@"launch-EN5cddc91c5c764846be8819553716e2c9-development"];
+    [ACPCore configureWithAppId:@"replaceWithAdobeCredentials"];
     
     [AppsFlyerAdobeExtension registerExtension];
     [ACPAnalytics registerExtension];
