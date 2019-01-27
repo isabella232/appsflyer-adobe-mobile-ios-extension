@@ -10,6 +10,7 @@
 #import "AppsFlyerAppDelegate.h"
 #import <ACPCore/ACPCore.h>
 #import "AppsFlyerAdobeExtension.h"
+
 #import <ACPCore/ACPIdentity.h>
 #import <ACPCore/ACPLifecycle.h>
 #import <ACPCore/ACPSignal.h>
@@ -17,13 +18,15 @@
 #import <AppsFlyerLib/AppsFlyerTracker.h>
 
 
+
 @implementation AppsFlyerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-//    [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
+    [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
     [ACPCore configureWithAppId:@"replace-with-adobe-launch-key"];
+
     
     [AppsFlyerAdobeExtension registerExtension];
     [ACPAnalytics registerExtension];

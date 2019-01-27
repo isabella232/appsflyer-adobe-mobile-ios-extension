@@ -1,3 +1,4 @@
+
 # AppsFlyer SDK Extension for Adobe Mobile SDK
 
 [![Version](https://img.shields.io/cocoapods/v/AppsFlyerAdobeExtension.svg?style=flat)](https://cocoapods.org/pods/AppsFlyerAdobeExtension)
@@ -5,7 +6,6 @@
 [![Platform](https://img.shields.io/cocoapods/p/AppsFlyerAdobeExtension.svg?style=flat)](https://cocoapods.org/pods/AppsFlyerAdobeExtension)
 
 ## Table of content
-
 - [Installation](#installation)
 - [Extension Initializaiton](#initialization)
 
@@ -47,15 +47,17 @@ For more information on adding applications to the AppsFlyer dashboard see [here
 Information on adding the extension to xCode is available on the Launch dashboard.
 
 
-
 ## <a id="eventTracking"> Event Tracking
-
 All events that are invoked using the `[ACPCore  trackAction]` API are automatically tracked to the AppsFlyer Platform as in-app events; For example, calling this API:
-
 ```
-
 [ACPCore  trackAction:@"testAnalyticsAction" data:@{@"revenue":@"200",@"currency":@"USD"];
+```
+will result in a `testAnalyticsAction` event tracked on the AppsFlyer Dashboard with a revenue of 200USD.
 
+ `revenue` and `currency` parameters are mapped to `af_revenue` and `af_currency`.
+
+## <a id="callbacks"> Extension Callbacks
+ Registering for deferred deep link and deep link callbacks:
 ```
 
 will result in a `testAnalyticsAction` event tracked on the AppsFlyer Dashboard with a revenue of 200USD.
@@ -94,40 +96,20 @@ NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
 
 The returned map should contain a `callback_type` key to distinguish between `onConversionDataReceived` (deferred deep link) and `onAppOpenAttribution`  (deep link).
 
-
-
-
-
 ## <a id="deeplinks"> Tracking Deep Links
-
-Tracking  ****Universal Links**** using the AppsFlyerAdobeExtension requires the developer to pass the userActivity and restorationHandler to the extension:
-
+Tracking  **Universal Links** using the AppsFlyerAdobeExtension requires the developer to pass the userActivity and restorationHandler to the extension:
 ```
-
 - (BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-
-[AppsFlyerAdobeExtension continueUserActivity:userActivity restorationHandler:restorationHandler];
-
-return  YES;
-
-
+    [AppsFlyerAdobeExtension continueUserActivity:userActivity restorationHandler:restorationHandler];
+    return  YES;
 
 }
-
 ```
-
-
 
 Tracking URL Types (Schemes) using the AppsFlyerAdobeExtension requires the developer to pass the url and options to the extension:
-
 ```
-
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary *) options {
-
-[AppsFlyerAdobeExtension  openURL:url options:options];
-
-return  YES;
-
+	[AppsFlyerAdobeExtension  openURL:url options:options];
+	return  YES;
 }
-
 ```
