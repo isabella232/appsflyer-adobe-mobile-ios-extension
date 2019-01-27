@@ -7,7 +7,7 @@
 //
 
 #import "AppsFlyerSharedStateListener.h"
-#import <ACPCore_iOS/ACPExtensionEvent.h>
+#import <ACPCore/ACPExtensionEvent.h>
 
 @implementation AppsFlyerSharedStateListener
 

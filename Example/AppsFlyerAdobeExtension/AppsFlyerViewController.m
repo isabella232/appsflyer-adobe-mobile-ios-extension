@@ -7,7 +7,7 @@
 //
 
 #import "AppsFlyerViewController.h"
-#import "ACPCore_iOS/ACPCore_iOS.h"
+#import <ACPCore/ACPCore.h>
 
 @interface AppsFlyerViewController ()
 

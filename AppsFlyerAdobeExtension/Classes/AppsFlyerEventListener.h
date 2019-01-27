@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ACPCore_iOS/ACPExtensionEvent.h>
+#import <ACPCore/ACPExtensionEvent.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
