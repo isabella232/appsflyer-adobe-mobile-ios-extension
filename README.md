@@ -1,4 +1,5 @@
 
+
 # AppsFlyer SDK Extension for Adobe Mobile SDK
 
 [![Version](https://img.shields.io/cocoapods/v/AppsFlyerAdobeExtension.svg?style=flat)](https://cocoapods.org/pods/AppsFlyerAdobeExtension)
@@ -56,45 +57,22 @@ will result in a `testAnalyticsAction` event tracked on the AppsFlyer Dashboard 
 
  `revenue` and `currency` parameters are mapped to `af_revenue` and `af_currency`.
 
+
 ## <a id="callbacks"> Extension Callbacks
  Registering for deferred deep link and deep link callbacks:
 ```
-
-will result in a `testAnalyticsAction` event tracked on the AppsFlyer Dashboard with a revenue of 200USD.
-
-
-
-`revenue` and `currency` parameters are mapped to `af_revenue` and `af_currency`.
-
-
-
-## <a id="callbacks"> Extension Callbacks
-
-Registering for deferred deep link and deep link callbacks:
-
+   [AppsFlyerAdobeExtension registerCallbacks:^(NSDictionary *dictionary) {
+        NSLog(@"[AppsFlyerAdobeExtension] Received callback: %@", dictionary);
+    }];
 ```
-
-[AppsFlyerAdobeExtension registerCallbacks:^(NSDictionary *dictionary) {
-
-NSLog(@"[AppsFlyerAdobeExtension] Received callback: %@", dictionary);
-
-}];
-
-```
-
 Handling Errors:
-
 ```
-
-[AppsFlyerAdobeExtension callbacksErrorHandler:^(NSError *error) {
-
-NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
-
-}];
-
-```
-
+    [AppsFlyerAdobeExtension callbacksErrorHandler:^(NSError *error) {
+        NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
+    }];
+``` 
 The returned map should contain a `callback_type` key to distinguish between `onConversionDataReceived` (deferred deep link) and `onAppOpenAttribution`  (deep link).
+
 
 ## <a id="deeplinks"> Tracking Deep Links
 Tracking  **Universal Links** using the AppsFlyerAdobeExtension requires the developer to pass the userActivity and restorationHandler to the extension:
