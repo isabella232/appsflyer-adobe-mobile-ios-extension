@@ -1,1 +1,0 @@
-../../../../ACPCore/AdobeMarketingMobileCore.framework/Headers/DatabaseHitSchema.h

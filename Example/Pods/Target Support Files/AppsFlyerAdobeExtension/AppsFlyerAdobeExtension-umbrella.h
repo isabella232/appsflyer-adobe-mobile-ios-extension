@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "AppsFlyerAdobeExtension.h"
+#import "AppsFlyerEventListener.h"
+#import "AppsFlyerSharedStateListener.h"
 
 FOUNDATION_EXPORT double AppsFlyerAdobeExtensionVersionNumber;
 FOUNDATION_EXPORT const unsigned char AppsFlyerAdobeExtensionVersionString[];

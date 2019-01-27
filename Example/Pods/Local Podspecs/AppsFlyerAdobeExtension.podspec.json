@@ -1,6 +1,6 @@
 {
   "name": "AppsFlyerAdobeExtension",
-  "version": "1.0.1",
+  "version": "1.0.4beta",
   "summary": "AppsFlyer iOS SDK Extension for Adobe Mobile SDK",
   "description": "AppsFlyer iOS SDK Extension for Adobe Mobile SDK.",
   "homepage": "https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension.git",
-    "tag": "1.0.1"
+    "tag": "1.0.4beta"
   },
   "platforms": {
     "ios": "11.0"
