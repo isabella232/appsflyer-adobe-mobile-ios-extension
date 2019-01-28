@@ -16,6 +16,8 @@
 
 - [Tracking Deep Links](#deeplinks)
 
+- [Example App](#example)
+
 ## <a id="installation">  Installation
 
 Import the latest `AppsFlyerAdobeExtension` from cocoaPods:
@@ -91,3 +93,6 @@ Tracking URL Types (Schemes) using the AppsFlyerAdobeExtension requires the deve
 	return  YES;
 }
 ```
+
+## <a id="example">  Example Application Usage:
+When using the "Example for AppsFlyerAdobeExtension" application - execute the `pod install` command  in the `AppsFlyerAdobeExtension/Example` folder in order to install all the relevant pod dependancies.  
