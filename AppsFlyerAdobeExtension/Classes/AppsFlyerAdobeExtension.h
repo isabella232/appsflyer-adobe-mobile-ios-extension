@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (atomic) BOOL didReceiveConfigurations;
 @property (atomic) BOOL didInit;
+@property (atomic) BOOL trackAttributionData;
 
 + (nullable instancetype)shared;
 + (void)registerExtension;
@@ -27,9 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onUnregister;
 - (void)unexpectedError: (NSError*) error;
 
-- (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey isDebug:(BOOL)isDebug;
+- (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey isDebug:(BOOL)isDebug trackAttrData:(BOOL)trackAttrData;
 + (void)registerCallbacks:(void (^ _Nullable)(NSDictionary *dictionary))completionHandler;
 + (void)callbacksErrorHandler:(void (^ _Nullable)(NSError *error))errorHandler;
+- (NSMutableDictionary*)setKeyPrefix:(NSDictionary *)attributionData;
 
 + (void)continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler;
 + (void)openURL:(NSURL *)url options:(NSDictionary *)options;

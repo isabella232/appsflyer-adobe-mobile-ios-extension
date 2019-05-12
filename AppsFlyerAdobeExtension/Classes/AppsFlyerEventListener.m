@@ -25,6 +25,11 @@
         NSDictionary* nestedData = [eventData objectForKey:@"contextdata"];
         NSString* eventName = [eventData objectForKey:@"action"];
         
+        if ([eventName isEqualToString:@"AppsFlyer Attribution Data"]) {
+            NSLog(@"com.appsflyer.adobeextension Discarding event binding for AppsFlyer Attribution Data event");
+            return;
+        }
+        
         NSNumber* revenue = [self extractRevenue:nestedData withKey:@"revenue"];
         NSString* currency = [self extractCurrency:nestedData withKey:@"currency"];
         

@@ -24,6 +24,8 @@ static void (^__errorHandler)(NSError*) = nil;
         
         _didReceiveConfigurations = NO;
         _didInit = NO;
+        _trackAttributionData = NO;
+        
         NSError* error = nil;
         
         // Listener/Dispatcher for shared state events
@@ -91,7 +93,8 @@ static void (^__errorHandler)(NSError*) = nil;
     NSLog(@"com.appsflyer.adobeextension unexpectedError %@", error);
 }
 
-- (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey isDebug:(BOOL)isDebug {
+- (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey
+                                isDebug:(BOOL)isDebug trackAttrData:(BOOL)trackAttrData {
     if (appId != nil && appsFlyerDevKey != nil) {
         if (![self didReceiveConfigurations]) {
             
@@ -109,6 +112,8 @@ static void (^__errorHandler)(NSError*) = nil;
             [AppsFlyerTracker sharedTracker].isDebug = isDebug;
             
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+            
+            [self setTrackAttributionData:trackAttrData];
             [self setDidReceiveConfigurations:YES];
             
             if (![self didInit]) {
@@ -138,6 +143,14 @@ static void (^__errorHandler)(NSError*) = nil;
 }
 
 - (void)onConversionDataReceived:(NSDictionary*)installData {
+    if (_trackAttributionData) {
+        id isFirstData = [installData objectForKey:@"is_first_launch"];
+        BOOL firstData = [isFirstData isKindOfClass:[NSNumber class]] && [isFirstData integerValue] == 1;
+        if (firstData) {
+            [ACPCore trackAction:@"AppsFlyer Attribution Data" data:[self setKeyPrefix:installData]];
+        }
+    }
+    
     NSMutableDictionary* appendedInstallData = [NSMutableDictionary dictionaryWithDictionary:installData];
     [appendedInstallData setObject:@"onConversionDataReceived" forKey:@"callback_type"];
     if (__completionHandler) {
@@ -167,6 +180,18 @@ static void (^__errorHandler)(NSError*) = nil;
 
 + (void)callbacksErrorHandler:(void (^) (NSError *error))errorHandler {
     __errorHandler = errorHandler;
+}
+
+-(NSMutableDictionary *) setKeyPrefix:(NSDictionary *)attributionData {
+    NSMutableDictionary* withPrefix = [[NSMutableDictionary alloc] init];
+    for(id key in attributionData) {
+        if (![key isEqualToString:@"callback_type"]) {
+            NSString* newKey = [NSString stringWithFormat: @"%@%@", @"appsflyer.", key];
+            NSString* newValue = [NSString stringWithFormat: @"%@", [attributionData objectForKey:key]];
+            [withPrefix setObject:newValue  forKey:newKey];
+        }
+    }
+    return withPrefix;
 }
 
 @end
