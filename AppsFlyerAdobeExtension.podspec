@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppsFlyerAdobeExtension'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'AppsFlyer iOS SDK Extension for Adobe Mobile SDK'
 
   s.description      = <<-DESC

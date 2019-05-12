@@ -11,7 +11,7 @@
 
 @implementation AppsFlyerEventListener
 
-- (nullable instancetype)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         NSLog(@"com.appsflyer.adobeextension Analytics Events listener was initialized");
