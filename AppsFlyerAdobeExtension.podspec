@@ -17,6 +17,6 @@ AppsFlyer iOS SDK Extension for Adobe Mobile SDK.
   s.static_framework = true
 
   s.public_header_files = 'AppsFlyerAdobeExtension/Classes/**/*.h'
-  s.dependency 'AppsFlyerFramework'
+  s.dependency 'AppsFlyerFramework', '~>4.11.0'
   s.dependency 'ACPCore'
 end
