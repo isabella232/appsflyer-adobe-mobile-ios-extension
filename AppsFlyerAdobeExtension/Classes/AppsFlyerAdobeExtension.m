@@ -25,6 +25,7 @@ static void (^__errorHandler)(NSError*) = nil;
         _didReceiveConfigurations = NO;
         _didInit = NO;
         _trackAttributionData = NO;
+        _eventSettings = @"action";
         
         NSError* error = nil;
         
@@ -94,7 +95,8 @@ static void (^__errorHandler)(NSError*) = nil;
 }
 
 - (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey
-                                isDebug:(BOOL)isDebug trackAttrData:(BOOL)trackAttrData {
+                                isDebug:(BOOL)isDebug trackAttrData:(BOOL)trackAttrData
+                                eventSettings:(nonnull NSString *)eventSettings {
     if (appId != nil && appsFlyerDevKey != nil) {
         if (![self didReceiveConfigurations]) {
             
@@ -114,6 +116,7 @@ static void (^__errorHandler)(NSError*) = nil;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
             
             [self setTrackAttributionData:trackAttrData];
+            [self setEventSettings: eventSettings];
             [self setDidReceiveConfigurations:YES];
             
             if (![self didInit]) {
@@ -164,6 +167,10 @@ static void (^__errorHandler)(NSError*) = nil;
     if (__completionHandler) {
         __completionHandler(appendedAttributionData);
     }
+}
+
+- (NSString*) getEventSettings {
+    return _eventSettings;
 }
 
 - (void)onConversionDataRequestFailure:(NSError *) error {
