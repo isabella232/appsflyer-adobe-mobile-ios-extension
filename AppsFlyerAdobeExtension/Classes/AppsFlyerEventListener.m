@@ -7,6 +7,7 @@
 //
 
 #import "AppsFlyerEventListener.h"
+#import "AppsFlyerAdobeExtension.h"
 #import <AppsFlyerLib/AppsFlyerTracker.h>
 
 @implementation AppsFlyerEventListener
@@ -20,12 +21,25 @@
 }
 
 - (void)hear:(nonnull ACPExtensionEvent*)event {
+    NSString* eventSettings  = [[AppsFlyerAdobeExtension shared] getEventSettings];
+    BOOL isRevenueEvent = NO;
+    
+    if ([eventSettings isEqualToString:@"none"]) {
+         NSLog(@"com.appsflyer.adobeextension error retreiving event binding state");
+        return;
+    }
+    
+    BOOL bindActionEvents = [eventSettings isEqualToString:@"actions"] || [eventSettings isEqualToString:@"all"];
+    BOOL bindStateEvents = [eventSettings isEqualToString:@"states"] || [eventSettings isEqualToString:@"all"];
+    
     if ([[event eventType] isEqualToString:@"com.adobe.eventType.generic.track"] && [[event eventSource] isEqualToString:@"com.adobe.eventSource.requestContent"]) {
         NSDictionary* eventData = [NSDictionary dictionaryWithDictionary:[event eventData]];
         NSDictionary* nestedData = [eventData objectForKey:@"contextdata"];
-        NSString* eventName = [eventData objectForKey:@"action"];
         
-        if ([eventName isEqualToString:@"AppsFlyer Attribution Data"]) {
+        NSString* eventAction = [eventData objectForKey:@"action"];
+        NSString* eventState = [eventData objectForKey:@"state"];
+        
+        if ([eventAction isEqualToString:@"AppsFlyer Attribution Data"]) {
             NSLog(@"com.appsflyer.adobeextension Discarding event binding for AppsFlyer Attribution Data event");
             return;
         }
@@ -33,19 +47,35 @@
         NSNumber* revenue = [self extractRevenue:nestedData withKey:@"revenue"];
         NSString* currency = [self extractCurrency:nestedData withKey:@"currency"];
         
+        NSMutableDictionary* af_payload_properties;
         if (revenue) {
-            NSMutableDictionary* af_payload_properties = [NSMutableDictionary dictionaryWithDictionary: nestedData];
+            af_payload_properties = [NSMutableDictionary dictionaryWithDictionary: nestedData];
             [af_payload_properties setObject:revenue forKey:@"af_revenue"];
-
+            
             if (currency) {
                 [af_payload_properties setObject:currency forKey:@"af_currency"];
             }
-            // Track event with af_revenue ( + af_currency if set)
-           [[AppsFlyerTracker sharedTracker] trackEvent:eventName withValues:af_payload_properties];
-        } else {
-            // Track the raw event.
-            if (eventName != nil && [eventName isKindOfClass:[NSString class]]) {
-                [[AppsFlyerTracker sharedTracker] trackEvent:eventName withValues:nestedData];
+            
+            isRevenueEvent = YES;
+        }
+        
+        if (bindActionEvents && eventAction.length != 0) {
+            if (isRevenueEvent && af_payload_properties != NULL) {
+                [[AppsFlyerTracker sharedTracker] trackEvent:eventAction withValues:af_payload_properties];
+            } else {
+                if (eventAction != nil && [eventAction isKindOfClass:[NSString class]]) {
+                        [[AppsFlyerTracker sharedTracker] trackEvent:eventAction withValues:nestedData];
+                    }
+            }
+        }
+        
+        if (bindStateEvents && eventState.length != 0) {
+            if (isRevenueEvent && af_payload_properties != NULL) {
+                [[AppsFlyerTracker sharedTracker] trackEvent:eventState withValues:af_payload_properties];
+            } else {
+                if (eventState != nil && [eventState isKindOfClass:[NSString class]]) {
+                    [[AppsFlyerTracker sharedTracker] trackEvent:eventState withValues:nestedData];
+                }
             }
         }
     }
