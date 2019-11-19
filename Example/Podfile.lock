@@ -1,20 +1,20 @@
 PODS:
-  - ACPAnalytics (2.0.1):
-    - ACPAnalytics/iOS (= 2.0.1)
-    - ACPCore (~> 2.0)
-  - ACPAnalytics/iOS (2.0.1):
-    - ACPCore (~> 2.0)
-  - ACPCore (2.0.1):
-    - ACPCore/iOS (= 2.0.1)
-  - ACPCore/iOS (2.0.1)
-  - AppsFlyerAdobeExtension (1.0.4beta):
+  - ACPAnalytics (2.1.2):
+    - ACPAnalytics/iOS (= 2.1.2)
+    - ACPCore (>= 2.1.1)
+  - ACPAnalytics/iOS (2.1.2):
+    - ACPCore (>= 2.1.1)
+  - ACPCore (2.3.6):
+    - ACPCore/iOS (= 2.3.6)
+  - ACPCore/iOS (2.3.6)
+  - AppsFlyerAdobeExtension (1.0.9):
     - ACPCore
-    - AppsFlyerFramework
-  - AppsFlyerFramework (4.8.9)
+    - AppsFlyerFramework (~> 4.11.0)
+  - AppsFlyerFramework (4.11.2)
 
 DEPENDENCIES:
-  - ACPAnalytics (= 2.0.1)
-  - ACPCore (~> 2.0.1)
+  - ACPAnalytics (= 2.1.2)
+  - ACPCore (~> 2.3.2)
   - AppsFlyerAdobeExtension (from `../`)
 
 SPEC REPOS:
@@ -28,11 +28,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACPAnalytics: b570cf7c7c91c66b94b9adaaabc4b58a64c6da5d
-  ACPCore: 18f65b91b8752778799310527f46cf23c0d6facf
-  AppsFlyerAdobeExtension: a7262853de1da71f58972b80172c223a3f4697a4
-  AppsFlyerFramework: 0fc823ec9b77f913e4108caa82c969be033058b1
+  ACPAnalytics: 872c4701bd53b508602ce1e31cf5e7cee295f690
+  ACPCore: 1d3a5b79f172de3d998cf63b5c1538da1dd66f33
+  AppsFlyerAdobeExtension: df44dc72210e31225eb680244228215e209fd9ce
+  AppsFlyerFramework: bd3f62ce804f0cf01bc1dcbe69b212d386048674
 
-PODFILE CHECKSUM: 158d2849dbf062150563460abc67305721ea1114
+PODFILE CHECKSUM: 1f415047c5e71b7daf25fdc88dbee7f4780801ff
 
 COCOAPODS: 1.5.3

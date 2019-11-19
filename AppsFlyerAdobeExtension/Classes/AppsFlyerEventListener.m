@@ -10,18 +10,25 @@
 #import "AppsFlyerAdobeExtension.h"
 #import <AppsFlyerLib/AppsFlyerTracker.h>
 
+@interface AppsFlyerEventListener()
+@property (weak, nonatomic) AppsFlyerAdobeExtension *extension;
+@end
+
 @implementation AppsFlyerEventListener
 
-- (instancetype)init {
+
+- (instancetype)initWithExtension:(id)extension
+{
     self = [super init];
     if (self) {
+        _extension = extension;
         NSLog(@"com.appsflyer.adobeextension Analytics Events listener was initialized");
     }
     return self;
 }
 
 - (void)hear:(nonnull ACPExtensionEvent*)event {
-    NSString* eventSettings  = [[AppsFlyerAdobeExtension shared] getEventSettings];
+    NSString* eventSettings  = [[self extension] getEventSettings];
     BOOL isRevenueEvent = NO;
     
     if ([eventSettings isEqualToString:@"none"]) {

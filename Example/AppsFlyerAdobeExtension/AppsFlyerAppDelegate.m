@@ -15,8 +15,6 @@
 #import <ACPCore/ACPLifecycle.h>
 #import <ACPCore/ACPSignal.h>
 #import <ACPAnalytics/ACPAnalytics.h>
-#import <AppsFlyerLib/AppsFlyerTracker.h>
-
 
 
 @implementation AppsFlyerAppDelegate
