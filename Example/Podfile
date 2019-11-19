@@ -3,8 +3,8 @@ use_frameworks!
 
 target 'AppsFlyerAdobeExtension_Example' do
   pod 'AppsFlyerAdobeExtension', :path => '../'
-  pod 'ACPAnalytics', '2.0.1'
-  pod 'ACPCore', '~> 2.0.1'
+  pod 'ACPAnalytics', '2.1.2'
+  pod 'ACPCore', '~> 2.3.2'
   
   
   target 'AppsFlyerAdobeExtension_Tests' do
