@@ -174,11 +174,15 @@ static void (^__errorHandler)(NSError*) = nil;
 }
 
 - (void)onConversionDataRequestFailure:(NSError *) error {
-    __errorHandler(error);
+    if (__errorHandler) {
+        __errorHandler(error);
+    }
 }
 
 - (void) onAppOpenAttributionFailure:(NSError *)error {
-    __errorHandler(error);
+    if (__errorHandler) {
+        __errorHandler(error);
+    }
 }
 
 + (void)registerCallbacks:(void (^)(NSDictionary *dictionary))completionHandler {
