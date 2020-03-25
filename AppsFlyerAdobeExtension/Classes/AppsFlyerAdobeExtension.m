@@ -145,22 +145,6 @@ static void (^__errorHandler)(NSError*) = nil;
     [[AppsFlyerTracker sharedTracker] handleOpenUrl:url options:options];
 }
 
-- (void)onConversionDataReceived:(NSDictionary*)installData {
-    if (_trackAttributionData) {
-        id isFirstData = [installData objectForKey:@"is_first_launch"];
-        BOOL firstData = [isFirstData isKindOfClass:[NSNumber class]] && [isFirstData integerValue] == 1;
-        if (firstData) {
-            [ACPCore trackAction:@"AppsFlyer Attribution Data" data:[self setKeyPrefix:installData]];
-        }
-    }
-    
-    NSMutableDictionary* appendedInstallData = [NSMutableDictionary dictionaryWithDictionary:installData];
-    [appendedInstallData setObject:@"onConversionDataReceived" forKey:@"callback_type"];
-    if (__completionHandler) {
-        __completionHandler(appendedInstallData);
-    }
-}
-
 - (void) onAppOpenAttribution:(NSDictionary *)attributionData {
     NSMutableDictionary* appendedAttributionData = [NSMutableDictionary dictionaryWithDictionary:attributionData];
     [appendedAttributionData setObject:@"onAppOpenAttribution" forKey:@"callback_type"];
@@ -173,13 +157,35 @@ static void (^__errorHandler)(NSError*) = nil;
     return _eventSettings;
 }
 
-- (void)onConversionDataRequestFailure:(NSError *) error {
+- (void) onAppOpenAttributionFailure:(NSError *)error {
     if (__errorHandler) {
         __errorHandler(error);
     }
 }
 
-- (void) onAppOpenAttributionFailure:(NSError *)error {
+- (void)onConversionDataSuccess:(nonnull NSDictionary *)installData {
+    
+    NSMutableDictionary* appendedInstallData = [NSMutableDictionary dictionaryWithDictionary:installData];
+    
+    if (_trackAttributionData) {
+        id isFirstData = [installData objectForKey:@"is_first_launch"];
+        BOOL firstData = [isFirstData isKindOfClass:[NSNumber class]] && [isFirstData integerValue] == 1;
+        if (firstData) {
+            NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
+            [appendedInstallData setObject:appsflyer_id forKey:@"appsflyer_id"];
+            [ACPCore trackAction:@"AppsFlyer Attribution Data" data:[self setKeyPrefix:appendedInstallData]];
+        }
+    }
+    
+    
+    [appendedInstallData setObject:@"onConversionDataReceived" forKey:@"callback_type"];
+    
+    if (__completionHandler) {
+        __completionHandler(appendedInstallData);
+    }
+}
+
+- (void)onConversionDataFail:(nonnull NSError *)error {
     if (__errorHandler) {
         __errorHandler(error);
     }
