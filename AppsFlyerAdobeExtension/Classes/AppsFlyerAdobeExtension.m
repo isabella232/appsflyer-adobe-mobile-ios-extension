@@ -148,6 +148,7 @@ static void (^__errorHandler)(NSError*) = nil;
 - (void) onAppOpenAttribution:(NSDictionary *)attributionData {
     NSMutableDictionary* appendedAttributionData = [NSMutableDictionary dictionaryWithDictionary:attributionData];
     [appendedAttributionData setObject:@"onAppOpenAttribution" forKey:@"callback_type"];
+    [ACPCore trackAction:@"AppsFlyer Engagement Data" data:[self setKeyPrefix:[self setKeyPrefixOnAppOpenAttribution:attributionData]]];
     if (__completionHandler) {
         __completionHandler(appendedAttributionData);
     }
@@ -166,11 +167,18 @@ static void (^__errorHandler)(NSError*) = nil;
 - (void)onConversionDataSuccess:(nonnull NSDictionary *)installData {
     
     NSMutableDictionary* appendedInstallData = [NSMutableDictionary dictionaryWithDictionary:installData];
+
     
     if (_trackAttributionData) {
         id isFirstData = [installData objectForKey:@"is_first_launch"];
         BOOL firstData = [isFirstData isKindOfClass:[NSNumber class]] && [isFirstData integerValue] == 1;
         if (firstData) {
+            
+            NSError* error = nil;
+            if (![self.api setSharedEventState:[self getSaredEventState:installData] event:nil error:&error] && error) {
+                NSLog(@"Error setting shared state %@:%ld", [error domain], [error code]);
+            }
+            
             NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
             [appendedInstallData setObject:appsflyer_id forKey:@"appsflyer_id"];
             [ACPCore trackAction:@"AppsFlyer Attribution Data" data:[self setKeyPrefix:appendedInstallData]];
@@ -209,6 +217,36 @@ static void (^__errorHandler)(NSError*) = nil;
         }
     }
     return withPrefix;
+}
+
+-(NSMutableDictionary *) setKeyPrefixOnAppOpenAttribution:(NSDictionary *)attributionData {
+    NSMutableDictionary* withPrefix = [[NSMutableDictionary alloc] init];
+    for(id key in attributionData) {
+        if (![key isEqualToString:@"callback_type"]) {
+            NSString* newKey = [NSString stringWithFormat: @"%@%@", @"appsflyer.af_engagement_", key];
+            NSString* newValue = [NSString stringWithFormat: @"%@", [attributionData objectForKey:key]];
+            [withPrefix setObject:newValue  forKey:newKey];
+        }
+    }
+    return withPrefix;
+}
+
+-(NSMutableDictionary *) getSaredEventState:(NSDictionary *)attributionData {
+    NSMutableDictionary* sharedEventState = [attributionData mutableCopy];
+    NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
+    NSString* sdk_verision = [[AppsFlyerTracker sharedTracker] getSDKVersion];
+    
+    [sharedEventState setObject:appsflyer_id  forKey:APPSFLYER_ID];
+    [sharedEventState setObject:sdk_verision  forKey:SDK_VERSION];
+    
+    if(![sharedEventState objectForKey:MEDIA_SOURCE]){
+        [sharedEventState setObject:@"organic"  forKey:MEDIA_SOURCE];
+    }
+    
+    [sharedEventState removeObjectForKey:CALLBACK_TYPE];
+    [sharedEventState removeObjectForKey:IS_FIRST_LAUNCH];
+
+    return sharedEventState;
 }
 
 @end
