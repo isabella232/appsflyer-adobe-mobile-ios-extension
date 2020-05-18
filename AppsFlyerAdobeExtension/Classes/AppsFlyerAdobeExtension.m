@@ -223,7 +223,7 @@ static void (^__errorHandler)(NSError*) = nil;
     NSMutableDictionary* withPrefix = [[NSMutableDictionary alloc] init];
     for(id key in attributionData) {
         if (![key isEqualToString:@"callback_type"]) {
-            NSString* newKey = [NSString stringWithFormat: @"%@%@", @"appsflyer.af_engagement_", key];
+            NSString* newKey = [NSString stringWithFormat: @"%@%@", @"af_engagement_", key];
             NSString* newValue = [NSString stringWithFormat: @"%@", [attributionData objectForKey:key]];
             [withPrefix setObject:newValue  forKey:newKey];
         }
