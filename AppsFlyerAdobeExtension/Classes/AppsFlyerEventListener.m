@@ -46,7 +46,7 @@
         NSString* eventAction = [eventData objectForKey:@"action"];
         NSString* eventState = [eventData objectForKey:@"state"];
         
-        if ([eventAction isEqualToString:@"AppsFlyer Attribution Data"]) {
+        if ([eventAction isEqualToString:@"AppsFlyer Attribution Data"] || [eventAction isEqualToString:@"AppsFlyer Engagement Data"]) {
             NSLog(@"com.appsflyer.adobeextension Discarding event binding for AppsFlyer Attribution Data event");
             return;
         }

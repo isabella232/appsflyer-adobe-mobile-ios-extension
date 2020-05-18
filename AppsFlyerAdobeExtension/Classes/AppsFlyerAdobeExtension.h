@@ -14,6 +14,12 @@
 #import "AppsFlyerSharedStateListener.h"
 #import <AppsFlyerLib/AppsFlyerTracker.h>
 
+#define APPSFLYER_ID     @"appsflyer_id"
+#define SDK_VERSION      @"sdk_version"
+#define MEDIA_SOURCE     @"media_source"
+#define IS_FIRST_LAUNCH  @"is_first_launch"
+#define CALLBACK_TYPE    @"callback_type"
+
 NS_ASSUME_NONNULL_BEGIN
 @interface AppsFlyerAdobeExtension : ACPExtension <AppsFlyerTrackerDelegate> {}
 
