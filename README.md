@@ -1,108 +1,103 @@
+<img src="https://www.appsflyer.com/wp-content/uploads/2016/11/logo-1.svg"  width="450">
 
+# appsflyer-adobe-mobile-ios-extension
 
-# AppsFlyer SDK Extension for Adobe Mobile SDK
+🛠 In order for us to provide optimal support, we would kindly ask you to submit any issues to support@appsflyer.com
 
-[![Version](https://img.shields.io/cocoapods/v/AppsFlyerAdobeExtension.svg?style=flat)](https://cocoapods.org/pods/AppsFlyerAdobeExtension)
-
-[![Platform](https://img.shields.io/cocoapods/p/AppsFlyerAdobeExtension.svg?style=flat)](https://cocoapods.org/pods/AppsFlyerAdobeExtension)
+> *When submitting an issue please specify your AppsFlyer sign-up (account) email , your app ID , production steps, logs, code snippets and any additional relevant information.*
 
 ## Table of content
-- [Installation](#installation)
-- [Extension Initializaiton](#initialization)
 
-- [Event Tracking](#eventTracking)
+- [Adding the SDK to your project](#add-sdk-to-project)
+- [Initializing the SDK](#init-sdk)
+- [Guides](#guides)
+- [API](#api) 
+- [Data Elements](#data-elements)
+- [Swift Example](#swift-example)
 
-- [Extension Callbacks](#callbacks)
 
-- [Tracking Deep Links](#deeplinks)
+### <a id="plugin-build-for"> This plugin is built for
+    
+- iOS AppsFlyer SDK **v5.3.0**
 
-- [Example App](#example)
+## <a id="add-sdk-to-project"> 📲 Adding the SDK to your project
 
-- [Attribution Data tracking with Adobe Analytics](#analyticsPostback)
+Add the following to your app's `Podfile`:
 
-## <a id="installation">  Installation
-
-Import the latest `AppsFlyerAdobeExtension` from cocoaPods:
-```objectivec
-pod 'AppsFlyerAdobeExtension', '~> 1.0'
+```javascript
+	pod 'AppsFlyerAdobeExtension', '~> 5.3'
 ```
-## <a id="initialization"> Extension Initialization
-Register the AppsFlyer Extension from the `applicationDidFinishLaunchingWithOptions` method, alongside the Adobe SDK initialization code:
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions :(NSDictionary *)launchOptions {
+
+## <a id="init-sdk"> 🚀 Initializing the SDK
+    
+Register the AppsFlyer extension from your `Application` class, alongside the Adobe SDK initialisation code: 
+```objc
 ...
-// Override point for customization after application launch.
-[ACPCore  configureWithAppId:@"yourAdobeLaunchID"];
-[AppsFlyerAdobeExtension  registerExtension];
-...
-}
-```
+#import "AppsFlyerAdobeExtension/AppsFlyerAdobeExtension.h"
+
+@implementation AppDelegate
 
 
-For additional instructions on using AppsFlyer's Adobe Mobile SDK Extension please see: https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property
-
-After adding the extension to the mobile property, please set the App ID and Dev Key fields and save the extension settings.
-
-![AppsFlyerAdobeSDK](https://github.com/AppsFlyerSDK/AppsFlyerAdobeExtension/blob/master/gitresources/img.png)
-
-For more information on adding applications to the AppsFlyer dashboard see [here](https://support.appsflyer.com/hc/en-us/articles/207377436-Adding-a-New-App-to-the-AppsFlyer-Dashboard)
-
-
-
-Information on adding the extension to xCode is available on the Launch dashboard.
-
-
-## <a id="eventTracking"> Event Tracking
-All events that are invoked using the `[ACPCore  trackAction]` API are automatically tracked to the AppsFlyer Platform as in-app events; For example, calling this API:
-```
-[ACPCore  trackAction:@"testAnalyticsAction" data:@{@"revenue":@"200",@"currency":@"USD"];
-```
-will result in a `testAnalyticsAction` event tracked on the AppsFlyer Dashboard with a revenue of 200USD.
-
- `revenue` and `currency` parameters are mapped to `af_revenue` and `af_currency`.
-
-
-## <a id="callbacks"> Extension Callbacks
- Registering for deferred deep link and deep link callbacks:
-```
-   [AppsFlyerAdobeExtension registerCallbacks:^(NSDictionary *dictionary) {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore configureWithAppId:@"Key"];
+    ...
+    [AppsFlyerAdobeExtension registerExtension];
+    ...
+    
+    [AppsFlyerAdobeExtension registerCallbacks:^(NSDictionary *dictionary) {
         NSLog(@"[AppsFlyerAdobeExtension] Received callback: %@", dictionary);
-    }];
-```
-Handling Errors:
-```
+        if([[dictionary objectForKey:@"callback_type"] isEqualToString:@"onConversionDataReceived"]){
+            if([[dictionary objectForKey:@"is_first_launch"] boolValue] == YES){
+                NSString* af_status = [dictionary objectForKey:@"af_status"];
+                if([af_status isEqualToString:@"Non-organic"]){
+                    NSLog(@"this is first launch and a non organic install!");
+                }
+            }
+        } else if([[dictionary objectForKey:@"callback_type"] isEqualToString:@"onAppOpenAttribution"]) {
+            NSLog(@"onAppOpenAttribution Received");
+        }
+     }];
+
     [AppsFlyerAdobeExtension callbacksErrorHandler:^(NSError *error) {
-        NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
-    }];
-``` 
-The returned map should contain a `callback_type` key to distinguish between `onConversionDataReceived` (deferred deep link) and `onAppOpenAttribution`  (deep link).
-
-
-## <a id="deeplinks"> Tracking Deep Links
-Tracking  **Universal Links** using the AppsFlyerAdobeExtension requires the developer to pass the userActivity and restorationHandler to the extension:
-```
-- (BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-    [AppsFlyerAdobeExtension continueUserActivity:userActivity restorationHandler:restorationHandler];
-    return  YES;
-
+          NSLog(@"[AppsFlyerAdobeExtension] Error receivng callback: %@" , error);
+      }];
+    
+    return YES;
 }
+
 ```
 
-Tracking URL Types (Schemes) using the AppsFlyerAdobeExtension requires the developer to pass the url and options to the extension:
-```
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary *) options {
-	[AppsFlyerAdobeExtension  openURL:url options:options];
-	return  YES;
-}
-```
+In Addition to adding the init code, the settings inside the launch dashboard must be set.
 
-## <a id="example">  Example Application Usage:
-When using the "Example for AppsFlyerAdobeExtension" application - execute the `pod install` command  in the `AppsFlyerAdobeExtension/Example` folder in order to install all the relevant pod dependancies.  
+<img src="./gitresources/LuanchAFInit.png" width="550" >
 
-## <a id="analyticsPostback"> Attribution Data tracking with Adobe Analytics
-Checking the "Send attribution data to Adobe Analytics" toggle on the [Configurations Dashboard](#Initialisation) will automatically send AppsFlyer Attribution data to Adobe Analytics using the `MobileCore.trackAction()` API - The data will be sent as an "*AppsFlyer Attribution Data*" Action.
-All ContextData will be prefixed by the `appsflyer.` prefix, for example: `appsflyer.campaign`, `appsflyer.adset` etc.
+| Setting  | Description   |
+| -------- | ------------- |
+| AppsFlyer iOS App ID      | Your iTunes [application ID](https://support.appsflyer.com/hc/en-us/articles/207377436-Adding-a-new-app#available-in-the-app-store-google-play-store-windows-phone-store)  (required for iOS only)  |
+| AppsFlyer Dev Key   | Your application [devKey](https://support.appsflyer.com/hc/en-us/articles/211719806-Global-app-settings-#sdk-dev-key) provided by AppsFlyer (required)  |
+| Bind in-app events for    | Bind adobe event to appsflyer in-app events. For more info see the doc [here](/docs/Guides.md#events). |
+| Send attribution data    | Send conversion data from the AppsFlyer SDK to adobe. This is required for data elements. |
+| Debug Mode    | Debug mode - set to `true` for testing only.  |
+
+> Note: For Send attribution data, use this feature if you are only working with ad networks that allow sharing user level data with 3rd party tools.
+
+## <a id="guides"> 📖 Guides
+
+- [Deep Linking](/docs/Guides.md#deeplinking)
+- [In-App Events](/docs/Guides.md#events)
+- [Data Elements](/docs/Guides.md#data-elements)
+- [Attribution Data tracking with Adobe Analytics](/docs/Guides.md#attr-data)
+- [Deeplink Data tracking with Adobe Analytics](/docs/Guides.md#deeplink-data)
+
+## <a id="api"> 📑 API
+  
+See the full [API](/docs/API.md) available for this plugin.
 
 
-*The Adobe Analytics Extension must be added and configured in the client Application.*
-**NOTE**: Use this feature if you are only working with ad networks that allow sharing user level data with 3rd party tools.
+## <a id="data-elements"> 📂 Data Elements
+  
+Check out the available data elements [here](/docs/DataElements.md).
+
+## <a id="swift-example"> Swift Example
+  
+See the Swift Example [here](/docs/SwiftExample.md).
