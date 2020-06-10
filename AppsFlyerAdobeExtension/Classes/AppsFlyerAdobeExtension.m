@@ -146,9 +146,10 @@ static void (^__errorHandler)(NSError*) = nil;
 }
 
 - (void) onAppOpenAttribution:(NSDictionary *)attributionData {
+    NSDictionary* newAttributionData = [self returnParsedAttribution:attributionData];
     NSMutableDictionary* appendedAttributionData = [NSMutableDictionary dictionaryWithDictionary:attributionData];
     [appendedAttributionData setObject:@"onAppOpenAttribution" forKey:@"callback_type"];
-    [ACPCore trackAction:@"AppsFlyer Engagement Data" data:[self setKeyPrefix:[self setKeyPrefixOnAppOpenAttribution:attributionData]]];
+    [ACPCore trackAction:@"AppsFlyer Engagement Data" data:[self setKeyPrefix:[self setKeyPrefixOnAppOpenAttribution:newAttributionData]]];
     if (__completionHandler) {
         __completionHandler(appendedAttributionData);
     }
@@ -247,6 +248,38 @@ static void (^__errorHandler)(NSError*) = nil;
     [sharedEventState removeObjectForKey:IS_FIRST_LAUNCH];
 
     return sharedEventState;
+}
+
+
+- (NSMutableDictionary<NSString *, NSString *> *)queryParametersFromURL:(NSURL *)url {
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+    NSMutableDictionary<NSString *, NSString *> *queryParams = [NSMutableDictionary<NSString *, NSString *> new];
+    for (NSURLQueryItem *queryItem in [urlComponents queryItems]) {
+        if (queryItem.value == nil) {
+            continue;
+        }
+        [queryParams setObject:queryItem.value forKey:queryItem.name];
+    }
+    return queryParams;
+}
+
+- (NSDictionary*)returnParsedAttribution:(NSDictionary*)attributionData {
+    if (attributionData) {
+        NSUInteger keyCount = [attributionData count];
+        if (keyCount == 1 && [[attributionData allKeys] containsObject:@"link"]) {
+            NSString *urlString = attributionData[@"link"];
+            if (urlString) {
+                NSURL *url = [NSURL URLWithString:urlString];
+                if (url) {
+                    NSMutableDictionary *dictionary = [self queryParametersFromURL:url];
+                    [dictionary setValue:urlString forKey:@"link"];
+                    return dictionary;
+                }
+            }
+        }
+    }
+    
+    return attributionData;
 }
 
 @end
