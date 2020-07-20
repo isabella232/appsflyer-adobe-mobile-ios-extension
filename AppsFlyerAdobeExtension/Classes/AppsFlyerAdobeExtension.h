@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic) BOOL didInit;
 @property (atomic) BOOL trackAttributionData;
 @property (atomic) NSString* eventSettings;
+@property (atomic) NSString* ecid;
+@property (atomic) NSDictionary* gcd;
 
 + (nullable instancetype)shared;
 + (void)registerExtension;
@@ -44,5 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler;
 + (void)openURL:(NSURL *)url options:(NSDictionary *)options;
 
+- (NSDictionary*)getConversionData;
+
 @end
 NS_ASSUME_NONNULL_END
+
