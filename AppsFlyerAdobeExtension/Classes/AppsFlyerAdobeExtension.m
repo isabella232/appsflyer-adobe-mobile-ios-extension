@@ -102,13 +102,17 @@ static void (^__errorHandler)(NSError*) = nil;
             
             [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {
                 if (retrievedCloudId) {
+                    self->_ecid = retrievedCloudId;
                     [[AppsFlyerTracker sharedTracker] setCustomerUserID:retrievedCloudId];
                 } else {
                     NSLog(@"com.appsflyer.adobeextension ExperienceCloudId is null");
                 }
             }];
+       
+            if (appId && ![appId isEqualToString: @""]){
+                [AppsFlyerTracker sharedTracker].appleAppID = appId;
+            }
             
-            [AppsFlyerTracker sharedTracker].appleAppID = appId;
             [AppsFlyerTracker sharedTracker].appsFlyerDevKey = appsFlyerDevKey;
             [AppsFlyerTracker sharedTracker].delegate = self;
             [AppsFlyerTracker sharedTracker].isDebug = isDebug;
@@ -149,6 +153,11 @@ static void (^__errorHandler)(NSError*) = nil;
     NSDictionary* newAttributionData = [self returnParsedAttribution:attributionData];
     NSMutableDictionary* appendedAttributionData = [NSMutableDictionary dictionaryWithDictionary:attributionData];
     [appendedAttributionData setObject:@"onAppOpenAttribution" forKey:@"callback_type"];
+    
+    if(_ecid){
+        [appendedAttributionData setObject:_ecid forKey:@"ecid"];
+    }
+    
     [ACPCore trackAction:@"AppsFlyer Engagement Data" data:[self setKeyPrefix:[self setKeyPrefixOnAppOpenAttribution:newAttributionData]]];
     if (__completionHandler) {
         __completionHandler(appendedAttributionData);
@@ -182,13 +191,18 @@ static void (^__errorHandler)(NSError*) = nil;
             
             NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
             [appendedInstallData setObject:appsflyer_id forKey:@"appsflyer_id"];
+            
+            if(_ecid){
+                [appendedInstallData setObject:_ecid forKey:@"ecid"];
+            }
+            
             [ACPCore trackAction:@"AppsFlyer Attribution Data" data:[self setKeyPrefix:appendedInstallData]];
         }
     }
     
     
     [appendedInstallData setObject:@"onConversionDataReceived" forKey:@"callback_type"];
-    
+    _gcd = appendedInstallData;
     if (__completionHandler) {
         __completionHandler(appendedInstallData);
     }
@@ -220,7 +234,7 @@ static void (^__errorHandler)(NSError*) = nil;
     return withPrefix;
 }
 
--(NSMutableDictionary *) setKeyPrefixOnAppOpenAttribution:(NSDictionary *)attributionData {
+- (NSMutableDictionary *) setKeyPrefixOnAppOpenAttribution:(NSDictionary *)attributionData {
     NSMutableDictionary* withPrefix = [[NSMutableDictionary alloc] init];
     for(id key in attributionData) {
         if (![key isEqualToString:@"callback_type"]) {
@@ -232,7 +246,7 @@ static void (^__errorHandler)(NSError*) = nil;
     return withPrefix;
 }
 
--(NSMutableDictionary *) getSaredEventState:(NSDictionary *)attributionData {
+- (NSMutableDictionary *) getSaredEventState:(NSDictionary *)attributionData {
     NSMutableDictionary* sharedEventState = [attributionData mutableCopy];
     NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
     NSString* sdk_verision = [[AppsFlyerTracker sharedTracker] getSDKVersion];
@@ -280,6 +294,10 @@ static void (^__errorHandler)(NSError*) = nil;
     }
     
     return attributionData;
+}
+
+- (NSDictionary*)getConversionData {
+    return _gcd;
 }
 
 @end
