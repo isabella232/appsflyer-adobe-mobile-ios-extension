@@ -114,24 +114,24 @@ See the Swift Example [here](/docs/SwiftExample.md).
 
 3. Call the `waitForAdvertisingIdentifierWithTimeoutInterval` api before `registerExtension`
     
-    ```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
-    [ACPCore configureWithAppId:@"launch-key"];
+```objectivec
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+	{
+	    [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
+	    [ACPCore configureWithAppId:@"launch-key"];
 
-    
-    if (@available(iOS 14, *)) {
-        [[AppsFlyerLib shared] waitForAdvertisingIdentifierWithTimeoutInterval:60];
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status){
-            
-        }];
-    }
-    
-    [AppsFlyerAdobeExtension registerExtension];
-    ...
-    return YES;
-}
-    ```
+
+	    if (@available(iOS 14, *)) {
+		[[AppsFlyerLib shared] waitForAdvertisingIdentifierWithTimeoutInterval:60];
+		[ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status){
+
+		}];
+	    }
+
+	    [AppsFlyerAdobeExtension registerExtension];
+	    ...
+	    return YES;
+	}
+```
 4. On your test device verify that Settings > Privacy > Tracking > Allow Apps to Request to Track, is toggled on.
         
