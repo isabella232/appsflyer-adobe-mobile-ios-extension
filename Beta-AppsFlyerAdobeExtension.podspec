@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name             = 'AppsFlyerAdobeExtension'
-  s.version          = '5.4.1'
+  s.name             = 'Beta-AppsFlyerAdobeExtension'
+  s.version          = '6.0.1'
   s.summary          = 'AppsFlyer iOS SDK Extension for Adobe Mobile SDK'
 
   s.description      = <<-DESC
@@ -17,6 +17,6 @@ AppsFlyer iOS SDK Extension for Adobe Mobile SDK.
   s.static_framework = true
 
   s.public_header_files = 'AppsFlyerAdobeExtension/Classes/**/*.h'
-  s.dependency 'AppsFlyerFramework', '~>5.4.1'
+  s.dependency 'Beta-AppsFlyerFramework', '~>6.0.1'
   s.dependency 'ACPCore'
 end

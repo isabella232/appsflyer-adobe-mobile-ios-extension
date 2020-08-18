@@ -2,7 +2,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'AppsFlyerAdobeExtension_Example' do
-  pod 'AppsFlyerAdobeExtension', :path => '../'
+  pod 'Beta-AppsFlyerAdobeExtension', :path => '../'
   pod 'ACPAnalytics', '2.1.2'
   pod 'ACPCore', '~> 2.3.2'
   

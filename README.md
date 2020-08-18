@@ -1,6 +1,6 @@
 <img src="https://www.appsflyer.com/wp-content/uploads/2016/11/logo-1.svg"  width="450">
 
-# appsflyer-adobe-mobile-ios-extension
+# beta-appsflyer-adobe-mobile-ios-extension
 
 🛠 In order for us to provide optimal support, we would kindly ask you to submit any issues to support@appsflyer.com
 
@@ -14,18 +14,19 @@
 - [API](#api) 
 - [Data Elements](#data-elements)
 - [Swift Example](#swift-example)
+- [Collect IDFA with ATTrackingManager](#collect-idfa)
 
 
 ### <a id="plugin-build-for"> This plugin is built for
     
-- iOS AppsFlyer SDK **v5.4.1**
+- iOS AppsFlyer SDK **v6.0.1-beta**
 
 ## <a id="add-sdk-to-project"> 📲 Adding the SDK to your project
 
 Add the following to your app's `Podfile`:
 
 ```javascript
-	pod 'AppsFlyerAdobeExtension', '~> 5.4'
+	pod 'Beta-AppsFlyerAdobeExtension', '~> 6.0.1'
 ```
 
 ## <a id="init-sdk"> 🚀 Initializing the SDK
@@ -41,6 +42,7 @@ Register the AppsFlyer extension from your `Application` class, alongside the Ad
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPCore configureWithAppId:@"Key"];
     ...
+
     [AppsFlyerAdobeExtension registerExtension];
     ...
     
@@ -101,3 +103,35 @@ Check out the available data elements [here](/docs/DataElements.md).
 ## <a id="swift-example"> Swift Example
   
 See the Swift Example [here](/docs/SwiftExample.md).
+
+##  <a id="collect-idfa"> Collect IDFA with ATTrackingManager
+    
+1. Add the `AppTrackingTransparency` framework to your xcode project. 
+2. In the `Info.plist`:
+    1. Add an entry to the list: Press +  next to `Information Property List`.
+    2. Scroll down and select `Privacy - Tracking Usage Description`.
+    3. Add as the value the wording you want to present to the user when asking for permission to collect the IDFA.
+
+3. Call the `waitForAdvertisingIdentifierWithTimeoutInterval` api before `registerExtension`
+    
+    ```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
+    [ACPCore configureWithAppId:@"launch-key"];
+
+    
+    if (@available(iOS 14, *)) {
+        [[AppsFlyerLib shared] waitForAdvertisingIdentifierWithTimeoutInterval:60];
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status){
+            
+        }];
+    }
+    
+    [AppsFlyerAdobeExtension registerExtension];
+    ...
+    return YES;
+}
+    ```
+4. On your test device verify that Settings > Privacy > Tracking > Allow Apps to Request to Track, is toggled on.
+        

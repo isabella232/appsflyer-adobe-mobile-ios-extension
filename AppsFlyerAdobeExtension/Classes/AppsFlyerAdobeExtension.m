@@ -103,19 +103,19 @@ static void (^__errorHandler)(NSError*) = nil;
             [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {
                 if (retrievedCloudId) {
                     self->_ecid = retrievedCloudId;
-                    [[AppsFlyerTracker sharedTracker] setCustomerUserID:retrievedCloudId];
+                    [[AppsFlyerLib shared] setCustomerUserID:retrievedCloudId];
                 } else {
                     NSLog(@"com.appsflyer.adobeextension ExperienceCloudId is null");
                 }
             }];
        
             if (appId && ![appId isEqualToString: @""]){
-                [AppsFlyerTracker sharedTracker].appleAppID = appId;
+                [AppsFlyerLib shared].appleAppID = appId;
             }
             
-            [AppsFlyerTracker sharedTracker].appsFlyerDevKey = appsFlyerDevKey;
-            [AppsFlyerTracker sharedTracker].delegate = self;
-            [AppsFlyerTracker sharedTracker].isDebug = isDebug;
+            [AppsFlyerLib shared].appsFlyerDevKey = appsFlyerDevKey;
+            [AppsFlyerLib shared].delegate = self;
+            [AppsFlyerLib shared].isDebug = isDebug;
             
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
             
@@ -124,7 +124,7 @@ static void (^__errorHandler)(NSError*) = nil;
             [self setDidReceiveConfigurations:YES];
             
             if (![self didInit]) {
-                [[AppsFlyerTracker sharedTracker] trackAppLaunch];
+                [[AppsFlyerLib shared] start];
                 [self setDidInit:YES];
             }
         } else {
@@ -135,18 +135,18 @@ static void (^__errorHandler)(NSError*) = nil;
 
 - (void) appDidBecomeActive {
     if ([self didReceiveConfigurations]) {
-        [[AppsFlyerTracker sharedTracker] trackAppLaunch];
+        [[AppsFlyerLib shared] start];
         [self setDidInit:YES];
     }
 }
 
 + (void)continueUserActivity:(NSUserActivity *)userActivity
             restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-    [[AppsFlyerTracker sharedTracker] continueUserActivity:userActivity restorationHandler:restorationHandler];
+    [[AppsFlyerLib shared] continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
 
 + (void)openURL:(NSURL *)url options:(NSDictionary *)options {
-    [[AppsFlyerTracker sharedTracker] handleOpenUrl:url options:options];
+    [[AppsFlyerLib shared] handleOpenUrl:url options:options];
 }
 
 - (void) onAppOpenAttribution:(NSDictionary *)attributionData {
@@ -189,7 +189,7 @@ static void (^__errorHandler)(NSError*) = nil;
                 NSLog(@"Error setting shared state %@:%ld", [error domain], [error code]);
             }
             
-            NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
+            NSString* appsflyer_id = [[AppsFlyerLib shared] getAppsFlyerUID];
             [appendedInstallData setObject:appsflyer_id forKey:@"appsflyer_id"];
             
             if(_ecid){
@@ -248,8 +248,8 @@ static void (^__errorHandler)(NSError*) = nil;
 
 - (NSMutableDictionary *) getSaredEventState:(NSDictionary *)attributionData {
     NSMutableDictionary* sharedEventState = [attributionData mutableCopy];
-    NSString* appsflyer_id = [[AppsFlyerTracker sharedTracker] getAppsFlyerUID];
-    NSString* sdk_verision = [[AppsFlyerTracker sharedTracker] getSDKVersion];
+    NSString* appsflyer_id = [[AppsFlyerLib shared] getAppsFlyerUID];
+    NSString* sdk_verision = [[AppsFlyerLib shared] getSDKVersion];
     
     [sharedEventState setObject:appsflyer_id  forKey:APPSFLYER_ID];
     [sharedEventState setObject:sdk_verision  forKey:SDK_VERSION];

@@ -12,7 +12,7 @@
 #import <ACPCore/ACPIdentity.h>
 #import "AppsFlyerEventListener.h"
 #import "AppsFlyerSharedStateListener.h"
-#import <AppsFlyerLib/AppsFlyerTracker.h>
+#import <AppsFlyerLib/AppsFlyerLib.h>
 
 #define APPSFLYER_ID     @"appsflyer_id"
 #define SDK_VERSION      @"sdk_version"
@@ -21,7 +21,7 @@
 #define CALLBACK_TYPE    @"callback_type"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface AppsFlyerAdobeExtension : ACPExtension <AppsFlyerTrackerDelegate> {}
+@interface AppsFlyerAdobeExtension : ACPExtension <AppsFlyerLibDelegate> {}
 
 @property (atomic) BOOL didReceiveConfigurations;
 @property (atomic) BOOL didInit;
