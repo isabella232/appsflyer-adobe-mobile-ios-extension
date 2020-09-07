@@ -8,7 +8,7 @@
 
 #import "AppsFlyerEventListener.h"
 #import "AppsFlyerAdobeExtension.h"
-#import <AppsFlyerLib/AppsFlyerTracker.h>
+#import <AppsFlyerLib/AppsFlyerLib.h>
 
 @interface AppsFlyerEventListener()
 @property (weak, nonatomic) AppsFlyerAdobeExtension *extension;
@@ -68,20 +68,20 @@
         
         if (bindActionEvents && eventAction.length != 0) {
             if (isRevenueEvent && af_payload_properties != NULL) {
-                [[AppsFlyerTracker sharedTracker] trackEvent:eventAction withValues:af_payload_properties];
+                [[AppsFlyerLib shared] logEvent:eventAction withValues:af_payload_properties];
             } else {
                 if (eventAction != nil && [eventAction isKindOfClass:[NSString class]]) {
-                        [[AppsFlyerTracker sharedTracker] trackEvent:eventAction withValues:nestedData];
+                        [[AppsFlyerLib shared] logEvent:eventAction withValues:nestedData];
                     }
             }
         }
         
         if (bindStateEvents && eventState.length != 0) {
             if (isRevenueEvent && af_payload_properties != NULL) {
-                [[AppsFlyerTracker sharedTracker] trackEvent:eventState withValues:af_payload_properties];
+                [[AppsFlyerLib shared] logEvent:eventState withValues:af_payload_properties];
             } else {
                 if (eventState != nil && [eventState isKindOfClass:[NSString class]]) {
-                    [[AppsFlyerTracker sharedTracker] trackEvent:eventState withValues:nestedData];
+                    [[AppsFlyerLib shared] logEvent:eventState withValues:nestedData];
                 }
             }
         }
