@@ -99,17 +99,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        AppsFlyerTracker.shared().continue(userActivity, restorationHandler: nil)
+        AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
-            AppsFlyerTracker.shared().handleOpen(url, options: nil)
+            AppsFlyerLib.shared().handleOpen(url, options: nil)
         }
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
+        // Processing Universal Link from the killed state 
+        if let userActivity = connectionOptions.userActivities.first {
+          self.scene(scene, continue: userActivity)
+        }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
