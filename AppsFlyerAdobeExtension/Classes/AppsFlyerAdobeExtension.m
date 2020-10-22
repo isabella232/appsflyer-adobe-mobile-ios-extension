@@ -97,7 +97,7 @@ static void (^__errorHandler)(NSError*) = nil;
 - (void)setupAppsFlyerTrackingWithAppId:(NSString*)appId appsFlyerDevKey:(NSString*)appsFlyerDevKey
                                 isDebug:(BOOL)isDebug trackAttrData:(BOOL)trackAttrData
                                 eventSettings:(nonnull NSString *)eventSettings {
-    if (appId != nil && appsFlyerDevKey != nil) {
+    if (appsFlyerDevKey != nil) {
         if (![self didReceiveConfigurations]) {
             
             [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {

@@ -37,7 +37,7 @@
         }
         
         if (configSharedState) {
-            if ([configSharedState objectForKey:@"appsFlyerAppId"] && [configSharedState objectForKey:@"appsFlyerDevKey"]) {
+            if ([configSharedState objectForKey:@"appsFlyerDevKey"]) {
                 NSString* appsFlyerAppId = [configSharedState objectForKey:@"appsFlyerAppId"];
                 NSString* appsFlyerDevKey = [configSharedState objectForKey:@"appsFlyerDevKey"];
                 NSString* eventSettings = [configSharedState objectForKey:@"inAppEventSetting"];
